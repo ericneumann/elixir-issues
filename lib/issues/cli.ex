@@ -50,5 +50,6 @@ defmodule Issues.CLI do
 
   def process( {user, project, _count}) do
     Issues.GithubIssues.fetch(user, project)
+    |> decode_response()
   end
 end
